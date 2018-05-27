@@ -1,0 +1,107 @@
+
+
+
+<div id="title" class="row">
+  <div class="col-xs-12">
+      <h4 class="section-title text-center">Status monitor</h4>
+  </div>
+</div>
+
+<div id="dashboardPanel1" class="row">
+
+    <div class="col-md-3"></div>
+
+    <div id="temp" class="col-md-3">
+        <div class="chart" style="width: 230px; height: 230px">
+            <pie-chart data="dataTemp" options="pieChartOptions"></pie-chart>
+        </div>
+    </div>
+
+
+    <div id="humidity" class="col-md-3">
+        <div class="chart" style="width: 230px; height: 230px; ">
+            <pie-chart data="dataHumidity" options="pieChartOptions"></pie-chart>
+        </div>
+    </div>
+
+
+    <div  class="col-md-3">
+
+      <label>Debug message:
+        <input type="checkbox" ng-model="debugChecked" />
+      </label>
+      <textarea  id="debugTextarea" ng-show="debugChecked" style="color: black; height: 220px; width: 250px;" >
+          {{allReceivedAndSentMessages}}
+      </textarea>
+
+    </div>
+</div>
+
+    <div id="dashboardPanel2" class="row">
+
+        <div class="col-md-3"></div>
+
+        <div id="temp" class="col-md-3">
+            <div class="chart" style="width: 230px; height: 230px">
+                <pie-chart data="dataPress" options="pieChartOptions"></pie-chart>
+            </div>
+        </div>
+
+
+        <div id="humidity" class="col-md-3">
+            <div class="chart" style="width: 230px; height: 230px; ">
+                <pie-chart data="dataLum" options="pieChartOptions"></pie-chart>
+            </div>
+        </div>
+
+              <div class="col-md-3"></div>
+
+    </div>
+
+<hr>
+    <div id="sendCommands" class="row">
+
+      <div class="col-xs-12">
+          <h4 class="section-title text-center">Send Commands</h4>
+          <br>
+      </div>
+
+        <div class="col-md-3"></div>
+
+        <div id="Command1" class="col-md-3 text-center">
+          <button type="button" class="btn btn-primary" ng-click='commandOne()'>
+               Send Command1
+          </button>
+
+        </div>
+
+
+        <div id="Command2" class="col-md-3 text-center">
+          <button type="button" class="btn btn-primary" ng-click='commandTwo()'>
+              Send Command2
+          </button>
+        </div>
+
+              <div class="col-md-3"></div>
+
+    </div>
+
+<br><br><br><br>
+
+
+    <!-- System messages directive -->
+
+    <div id="dashboard-alerts-container" class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 text-center">
+      <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+    </div>
+
+</div>
+
+
+<!-- debug textarea automatic scroll -->
+<script>
+var textarea = document.getElementById('debugTextarea');
+setInterval(function(){
+    textarea.scrollTop = textarea.scrollHeight;
+}, 1000);
+</script>

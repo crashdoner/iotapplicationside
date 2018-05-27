@@ -1,0 +1,22 @@
+#
+# Note that you need to replace the <xxx> values with the configuration
+# parameters that you registered the device-simulator with. This device
+# registration can either be done in the Watson IoT Platform dashboard or
+# via its http API
+#
+
+#IOT PLATFORM CREDENTIALS (Application)
+iotf_org=xxxxxxx
+iotf_appid=xxxxxx
+iotf_apikey=xxxxxxxx
+iotf_authtoken=xxxxxxxx
+
+# where send commands (target device that receive the commands)
+iotf_targetDeviceType=xxxxxxxx
+iotf_targetDeviceID=xxxxxxx
+
+# Twitter key for twitterbot
+TWITTER_CONSUMER_KEY=xxxxxxxxxxxxxxx
+TWITTER_CONSUMER_SECRET=xxxxxxxxxxxxxxxxxxxxxxx
+TWITTER_ACCESS_TOKEN_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+TWITTER_ACCESS_TOKEN_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
